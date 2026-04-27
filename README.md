@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+# Portfolio ASCII
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site vitrine (une page) de type « terminal / ASCII art », bâti avec React et Vite. Sections : en-tête, stack technique, à propos, projets, contact.
 
-Currently, two official plugins are available:
+## Pile technique
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **TypeScript**
+- **Vite 8**
+- **Tailwind CSS 4** (plugin Vite)
+- **Framer Motion** (animations)
 
-## React Compiler
+## Prérequis
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [Node.js](https://nodejs.org/) (LTS recommandé)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Commande    | Rôle |
+|------------|------|
+| `npm run dev` | Serveur de développement (HMR) |
+| `npm run build` | Vérification TypeScript + build de production (`dist/`) |
+| `npm run preview` | Prévisualisation du build local |
+| `npm run lint` | ESLint sur le projet |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Personnalisation du contenu
+
+Les textes et liens sont centralisés dans `src/data/` :
+
+- `contact.ts` — e-mail, réseaux, etc.
+- `hero.ts` — titre / intro du hero
+- `about.ts` — blocs « à propos »
+- `projects.ts` — cartes projets
+- `stackLogos.tsx` — logos de la section stack
+- `asciiDecor.ts` — art ASCII décoratif
+
+## Structure des composants
+
+Composants principaux dans `src/components/` : `Nav`, `Hero`, `Stack`, `About`, `Projects`, `Contact`, `Footer`. Point d’entrée de l’app : `src/App.tsx`.
