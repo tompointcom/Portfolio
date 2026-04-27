@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #000000;
+  --color-background: #181818;
   --color-foreground: #ffffff;
   --color-secondary: #888888;
   --color-muted: #444444;
-  --color-border: #222222;
+  --color-border: rgba(34, 34, 34, 1);
   --color-border-subtle: #1a1a1a;
   --color-grid: #111111;
+  --color-accent: #ffffff;
   --font-sans: "JetBrains Mono", ui-monospace, monospace;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
@@ -59,6 +60,11 @@
     transform: scaleX(1);
   }
 
+  .nav-link-active::after {
+    transform: scaleX(1);
+    background-color: var(--color-accent);
+  }
+
   .hero-cursor-blink {
     animation: hero-blink 1s step-end infinite;
   }
@@ -71,6 +77,51 @@
     50%,
     100% {
       opacity: 0;
+    }
+  }
+
+  .stack-marquee-track {
+    animation: stack-marquee 45s linear infinite;
+  }
+
+  @keyframes stack-marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .stack-wrap:hover .stack-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes footer-deco {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .footer-deco-anim {
+    animation: footer-deco 5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stack-marquee-track {
+      animation: none;
+    }
+
+    .stack-wrap:hover .stack-marquee-track {
+      animation-play-state: running;
+    }
+
+    .footer-deco-anim {
+      animation: none;
     }
   }
 }
