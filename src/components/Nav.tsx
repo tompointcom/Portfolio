@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react'
+import { useActiveSection } from '../hooks/useActiveSection'
 
 const NAV_LINKS = [
   { sectionId: 'about', label: './about' },
   { sectionId: 'projects', label: './projects' },
-  { sectionId: 'stack', label: './stack' },
   { sectionId: 'contact', label: './contact' },
 ] as const
 
@@ -14,6 +14,7 @@ function scrollToSection(sectionId: string) {
 
 export function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const activeSection = useActiveSection()
 
   const handleNavigate = useCallback((sectionId: string) => {
     scrollToSection(sectionId)
@@ -42,7 +43,7 @@ export function Nav() {
             <button
               key={sectionId}
               type="button"
-              className="nav-link cursor-pointer border-0 bg-transparent p-0 text-[10px] font-medium uppercase tracking-[0.2em] text-foreground"
+              className={`nav-link cursor-pointer border-0 bg-transparent p-0 text-[10px] font-medium uppercase tracking-[0.2em] text-foreground ${activeSection === sectionId ? 'nav-link-active' : ''}`}
               onClick={() => handleNavigate(sectionId)}
             >
               {label}
@@ -52,21 +53,39 @@ export function Nav() {
 
         <button
           type="button"
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 border border-border bg-transparent md:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-transparent p-0 text-foreground md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           onClick={() => setMenuOpen((o) => !o)}
         >
-          <span
-            className={`block h-px w-5 bg-foreground transition-transform ${menuOpen ? 'translate-y-[3px] rotate-45' : ''}`}
-          />
-          <span
-            className={`block h-px w-5 bg-foreground transition-opacity ${menuOpen ? 'opacity-0' : ''}`}
-          />
-          <span
-            className={`block h-px w-5 bg-foreground transition-transform ${menuOpen ? '-translate-y-[3px] -rotate-45' : ''}`}
-          />
+          {menuOpen ? (
+            <svg
+              className="h-5 w-5 shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              vectorEffect="non-scaling-stroke"
+              strokeLinecap="square"
+              aria-hidden
+            >
+              <path d="M5 5L19 19M19 5L5 19" />
+            </svg>
+          ) : (
+            <svg
+              className="h-5 w-5 shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              vectorEffect="non-scaling-stroke"
+              strokeLinecap="square"
+              aria-hidden
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          )}
         </button>
       </div>
 
@@ -80,7 +99,7 @@ export function Nav() {
             <li key={sectionId}>
               <button
                 type="button"
-                className="nav-link w-full cursor-pointer border-0 bg-transparent py-3 text-left text-[10px] font-medium uppercase tracking-[0.2em] text-foreground"
+                className={`nav-link w-full cursor-pointer border-0 bg-transparent py-3 text-left text-[10px] font-medium uppercase tracking-[0.2em] text-foreground ${activeSection === sectionId ? 'nav-link-active' : ''}`}
                 onClick={() => handleNavigate(sectionId)}
               >
                 {label}
