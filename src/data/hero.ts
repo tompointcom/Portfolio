@@ -8,11 +8,11 @@ export interface HeroCopy {
 }
 
 export const heroCopy: HeroCopy = {
-  label: '> DISPONIBLE - DÉVELOPPEUR FRONT-END',
+  label: '> AVAILABLE - FRONT-END DEVELOPER',
   name: 'Tom Courcy',
   subtitle: 'Front-end Developer & UX Designer',
   description:
-    "Je conçois des interfaces web précises, accessibles et agréables à utiliser. React, design system, expérience utilisateur.",
-  primaryCta: 'voir les projets',
-  secondaryCta: 'me contacter',
+    'I design precise, accessible web interfaces that are a pleasure to use. React, design systems, user experience.',
+  primaryCta: 'view projects',
+  secondaryCta: 'get in touch',
 }

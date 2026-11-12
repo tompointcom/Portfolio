@@ -1,11 +1,11 @@
 export const aboutCopy = {
-  title: 'À propos',
+  title: 'About',
   paragraphs: [
-    "Je suis développeur front-end : j'aime produire des interfaces claires, rapides et inclusives.",
-    "Je travaille surtout avec React et TypeScript, en m'appuyant sur des design systems et des patterns d'accessibilité pour livrer des expériences cohérentes du prototype à la production.",
+    "I'm a front-end developer: I like building interfaces that are clear, fast, and inclusive.",
+    'I mainly work with React and TypeScript, relying on design systems and accessibility patterns to ship consistent experiences from prototype to production.',
   ],
   highlights: [
     'React · TypeScript · Tailwind CSS',
-    'Accessibilité & performance',
+    'Accessibility & performance',
   ],
 } as const

@@ -43,7 +43,7 @@ export function Projects() {
     : { y: -3, boxShadow: '0 6px 32px rgba(255, 255, 255, 0.08)' }
 
   return (
-    <Section id="projects" label="02 // PROJECTS" heading="Projets récents">
+    <Section id="projects" label="02 // PROJECTS" heading="Recent projects">
       <motion.div
         className="grid gap-6 sm:grid-cols-2"
         variants={containerVariants}

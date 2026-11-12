@@ -37,7 +37,7 @@ export function Nav() {
 
         <nav
           className="hidden items-center gap-8 md:flex"
-          aria-label="Navigation principale"
+          aria-label="Main navigation"
         >
           {NAV_LINKS.map(({ sectionId, label }) => (
             <button
@@ -56,7 +56,7 @@ export function Nav() {
           className="inline-flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-transparent p-0 text-foreground md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
-          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setMenuOpen((o) => !o)}
         >
           {menuOpen ? (

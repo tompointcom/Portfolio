@@ -12,7 +12,7 @@ export const projects: Project[] = [
     id: 'relay',
     name: 'Relay',
     description:
-      'Plateforme de gestion de tâches personnelles et d’équipe : ownership clair, collaboration et coordination inter-équipes. Architecture microservices.',
+      'Personal and team task management platform: clear ownership, collaboration, and cross-team coordination. Microservices architecture.',
     tags: ['Tanstack', 'TypeScript', 'Tailwind', 'GO', 'Microservices', 'gRPC'],
     repoUrl: 'https://github.com/rijum8906/relay',
   },
@@ -20,7 +20,7 @@ export const projects: Project[] = [
     id: 'impulse-paie',
     name: 'Impulse Paie',
     description:
-      'Site vitrine pour un cabinet expert en gestion de la paie et administration du personnel : présentation de l’offre et prise de contact.',
+      'Showcase site for a firm specializing in payroll and HR administration: services overview and a way to get in touch.',
     tags: ['React', 'TypeScript', 'React Router', 'Sanity.io'],
     liveUrl: 'https://www.impulsepaie.fr/',
   },

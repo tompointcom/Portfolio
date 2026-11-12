@@ -20,7 +20,7 @@ export function Stack() {
   const reduced = useReducedMotion()
 
   return (
-    <section id="stack" aria-label="Stack technique" className="border-b border-border bg-background py-6 md:py-7">
+    <section id="stack" aria-label="Tech stack" className="border-b border-border bg-background py-6 md:py-7">
       {reduced ? (
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 px-4 md:gap-x-16">
           {stackMarqueeItems.map(({ id, name, Logo }) => (
