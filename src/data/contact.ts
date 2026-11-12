@@ -5,5 +5,5 @@ export const contactCopy = {
     'A project, a collaboration, or just want to talk? Write to me — I reply quickly.',
   email: 'tom.courcy@gmail.com',
   githubUrl: 'https://github.com/tompointcom',
-  linkedinUrl: 'https://www.linkedin.com/in/tomcourcy',
+  linkedinUrl: 'https://www.linkedin.com/in/tom-courcy-bb55b1210/',
 } as const
